@@ -128,8 +128,7 @@ public class VerContas extends javax.swing.JFrame {
             TelaCadContas telaEdt = new TelaCadContas();
             telaEdt.setConta(contaSel);
             telaEdt.setVisible(true);
-            
-            
+
             carregarContasCadastrados();
             
         } else {

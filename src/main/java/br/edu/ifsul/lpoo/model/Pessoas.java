@@ -86,7 +86,7 @@ public abstract class Pessoas implements Serializable{
 
     @Override
     public String toString() {
-        return "Nome=" + nome;
+        return "["+id+"] "+"Nome=" + nome;
     }
     
 }

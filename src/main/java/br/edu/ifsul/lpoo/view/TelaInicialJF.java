@@ -79,7 +79,7 @@ public class TelaInicialJF extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         txtSenha = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblLogin.setText("Login Usuários");

@@ -32,37 +32,33 @@ public class TelaLoginCliente extends javax.swing.JFrame {
      */
     public boolean localizaCliente() {
         boolean existe = false;
-        
-        // Obtém o número do crachá digitado pelo usuário
+
         String loginUser = txtLoginUser.getText();
         
-        // Verifica se o campo do crachá não está vazio
         if (loginUser.trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, digite um Usuário válido.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            return false; // Retorna falso se o campo estiver vazio
+            return false;
         }
 
-        // Obtém a lista de funcionários do banco de dados
         List<Clientes> listaClientes = jpa.getClientes();
 
-        // Verifica se a lista de funcionários não é nula (erro na persistência)
         if (listaClientes != null) {
-            // Itera sobre a lista de funcionários para encontrar uma correspondência
+            
             for (Clientes c : listaClientes) {
-                // Compara o texto digitado no campo com o número do crachá do funcionário
+                
                 if (loginUser.equals(c.getLogin())) {
-                    existe = true; // Funcionário encontrado
-                    cliente = c; // Atribui o funcionário encontrado à variável global
-                    break; // Sai do loop assim que encontrar o funcionário
+                    existe = true; 
+                    cliente = c;
+                    break; 
                 }
             }
         } else {
-            // Mensagem de erro se a lista de funcionários não puder ser carregada
             JOptionPane.showMessageDialog(this, "Erro ao carregar lista de Clientes. Verifique o console.", "Erro", JOptionPane.ERROR_MESSAGE);
             System.err.println("Erro: jpa.getClientes() retornou null.");
         }
         return existe;
-    }   
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,8 +139,9 @@ public class TelaLoginCliente extends javax.swing.JFrame {
            if(localizaCliente()){
             if(txtSenhaC.getText().equals(cliente.getSenha())){
             CaixaEletronicoJF caixa = new CaixaEletronicoJF();
-            caixa.setVisible(true); 
-            caixa.setClinete(cliente);
+            caixa.setCliente(cliente);
+            caixa.setVisible(true);
+
             dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "Senha Inválida!!", "Erro de Login", JOptionPane.ERROR_MESSAGE);

@@ -106,8 +106,8 @@ public class Contas implements Serializable{
         this.senha = senha;
     }
 
-    public String getProprietario() {
-        return proprietario.getNome();
+    public Clientes getProprietario() {
+        return proprietario;
     }
 
     public void setProprietario(Clientes proprietario) {
@@ -142,7 +142,7 @@ public class Contas implements Serializable{
     public String toString() {
         return "numero=" + numero + ", Saldo Crédito=" + saldoCredito
                 +"Saldo Debito=" + saldoDebito+
-                ", proprietario=" + proprietario.getNome() + ", tipo da conta="+tipoConta;
+                ", proprietario=" + proprietario.getId()+ ", tipo da conta="+tipoConta;
     }
     
     

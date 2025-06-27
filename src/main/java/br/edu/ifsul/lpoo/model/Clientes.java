@@ -49,7 +49,7 @@ public class Clientes extends Pessoas{
 
     @Override
     public String toString() {
-        return super.toString() + ", Login=" + Login + '}';
+        return super.toString() + ", Login=" + Login;
     }
     
     
