@@ -5,3 +5,4 @@ Ele permite que clientes realizem saques, depósitos e consultem seus saldos, en
 e o gerenciamento de contas. O sistema possui um robusto controle de acesso, garantindo que as funcionalidades e os dados de cadastro sejam 
 acessíveis apenas ao tipo de usuário (cliente ou gerente) logado. A arquitetura utiliza a estratégia de herança JOINED no JPA, onde as entidades
 Clientes e Funcionarios herdam de uma superclasse Pessoas, otimizando a modelagem e persistência de dados no PostgreSQL.
+![Diagrama Sistema de Banco](https://github.com/user-attachments/assets/92b7aa08-db3e-4189-96c0-8b84b771a4dc)
